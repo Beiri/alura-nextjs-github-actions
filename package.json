@@ -13,7 +13,8 @@
     "deploy:staging": "npm run build && npx vercel ./build --confirm --no-clipboard --token=$VERCEL_TOKEN",
     "deploy:prod": "npm run deploy:staging -- --prod",
     "deploy:preview": "node ./scripts/pullRequestPreview",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:e2e:open": "cypress open",
+    "test:e2e": "cypress run --config-file=cypress.config.js"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +26,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "cypress": "^13.6.4",
     "eslint": "8.56.0",
     "eslint-config-next": "14.1.0",
     "eslint-config-prettier": "^9.1.0",
